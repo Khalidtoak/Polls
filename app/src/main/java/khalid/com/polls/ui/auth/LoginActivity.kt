@@ -1,4 +1,4 @@
-package khalid.com.polls.ui
+package khalid.com.polls.ui.auth
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

@@ -1,14 +1,13 @@
 package khalid.com.polls.ui
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
-import androidx.fragment.app.FragmentStatePagerAdapter
-import androidx.viewpager2.adapter.FragmentStateAdapter
 import khalid.com.polls.R
 import khalid.com.polls.models.IntroData
+import khalid.com.polls.ui.Animation.ZoomOutPageTransformer
+import khalid.com.polls.ui.auth.LoginActivity
+import khalid.com.polls.ui.auth.SignUpActivity
 import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : FragmentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

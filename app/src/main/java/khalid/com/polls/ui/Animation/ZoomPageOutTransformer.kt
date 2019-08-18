@@ -1,4 +1,4 @@
-package khalid.com.polls.ui
+package khalid.com.polls.ui.Animation
 
 import android.view.View
 import androidx.viewpager2.widget.ViewPager2
