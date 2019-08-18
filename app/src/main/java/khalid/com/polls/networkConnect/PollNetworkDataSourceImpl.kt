@@ -10,14 +10,11 @@ class PollNetworkDataSourceImpl(
     private val pollApiService: PollApiService,
     private val base: Base
 ) : PollNetworkDataSource {
-    override suspend fun doSignUp(signUpRequest: SignUpRequest): AuthResponse? {
-        return base.safeApiCall(
+    override suspend fun doSignUp(signUpRequest: SignUpRequest): AuthResponse? =
+        base.safeApiCall(
             call = { pollApiService.signUpAsync(signUpRequest) })
 
-    }
-
-    override suspend fun doLogin(loginRequest: LoginRequest) {
-        //To change body of created functions use File | Settings | File Templates.
-    }
-    //receive a card as input  and
+    override suspend fun doLogin(loginRequest: LoginRequest): AuthResponse? = base.safeApiCall(
+        call = { pollApiService.loginAsync(loginRequest) }
+    )
 }

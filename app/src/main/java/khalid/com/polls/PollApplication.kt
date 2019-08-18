@@ -2,12 +2,14 @@ package khalid.com.polls
 
 import android.app.Application
 import com.jakewharton.threetenabp.AndroidThreeTen
+import khalid.com.polls.models.network.request.LoginRequest
 import khalid.com.polls.models.network.request.SignUpRequest
 import khalid.com.polls.networkConnect.*
 import khalid.com.polls.providers.AuthProvider
 import khalid.com.polls.providers.AuthProviderImpl
 import khalid.com.polls.repos.PollsRepo
 import khalid.com.polls.repos.PollsRepoImpl
+import khalid.com.polls.ui.auth.LoginViewModelFactory
 import khalid.com.polls.ui.auth.SignUpViewModelFactory
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
@@ -36,8 +38,10 @@ class PollApplication : Application(), KodeinAware {
         bind() from factory { signUpRequest: SignUpRequest ->
             SignUpViewModelFactory(instance(), signUpRequest)
         }
+        bind() from factory { loginRequest: LoginRequest ->
+            LoginViewModelFactory(instance(), loginRequest)
+        }
     }
-
     override fun onCreate() {
         super.onCreate()
         AndroidThreeTen.init(this)

@@ -9,5 +9,5 @@ import khalid.com.polls.models.network.response.auth.AuthResponse
  */
 interface PollNetworkDataSource {
     suspend fun doSignUp(signUpRequest: SignUpRequest): AuthResponse?
-    suspend fun doLogin(loginRequest: LoginRequest)
+    suspend fun doLogin(loginRequest: LoginRequest): AuthResponse?
 }

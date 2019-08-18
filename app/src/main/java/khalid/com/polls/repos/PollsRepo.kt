@@ -1,6 +1,7 @@
 package khalid.com.polls.repos
 
 import androidx.lifecycle.LiveData
+import khalid.com.polls.models.network.request.LoginRequest
 import khalid.com.polls.models.network.request.SignUpRequest
 import khalid.com.polls.models.network.response.auth.AuthResponse
 import khalid.com.polls.networkConnect.Result
@@ -10,4 +11,5 @@ import khalid.com.polls.networkConnect.Result
  */
 interface PollsRepo {
     suspend fun fetchUserFromServer(signUpRequest: SignUpRequest): AuthResponse?
+    suspend fun fetchUserFromLogin(loginRequest: LoginRequest): AuthResponse?
 }

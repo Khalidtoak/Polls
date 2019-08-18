@@ -1,6 +1,7 @@
 package khalid.com.polls.networkConnect
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
+import khalid.com.polls.models.network.request.LoginRequest
 import khalid.com.polls.models.network.request.SignUpRequest
 import khalid.com.polls.models.network.response.auth.AuthResponse
 import kotlinx.coroutines.Deferred
@@ -17,6 +18,9 @@ import retrofit2.http.POST
 interface PollApiService {
     @POST("/api/auth/signup")
     suspend fun signUpAsync(@Body signUpRequest: SignUpRequest): Response<AuthResponse>
+
+    @POST("/api/auth/signin")
+    suspend fun loginAsync(@Body loginRequest: LoginRequest): Response<AuthResponse>
 
     companion object {
         operator fun invoke(): PollApiService {

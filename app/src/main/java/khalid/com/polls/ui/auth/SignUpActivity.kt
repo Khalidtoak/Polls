@@ -26,22 +26,18 @@ class SignUpActivity : AppCompatActivity(), KodeinAware {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
-
         sign_up_button.setOnClickListener {
             if (anyOfTheFieldsIsEmpty()) return@setOnClickListener
             observeAuthData(it)
         }
 
     }
-
     fun goToLoginActivity(view: View) {
         startActivity(Intent(this@SignUpActivity, LoginActivity::class.java))
     }
-
     fun onBackPressed(view: View) {
         finish()
     }
-
     private fun observeAuthData(view: View) {
         progressBar.visibility = View.VISIBLE
         signUpViewModel = ViewModelProvider(
@@ -71,6 +67,7 @@ class SignUpActivity : AppCompatActivity(), KodeinAware {
         })
     }
 
+    //data validation
     private fun anyOfTheFieldsIsEmpty(): Boolean {
         if (user_name.text.toString().isEmpty()) {
             user_name.error = "Username cannot be empty"
