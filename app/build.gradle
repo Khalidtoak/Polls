@@ -22,66 +22,71 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+
+    dynamicFeatures = [":authentication"]
+
+
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation 'androidx.core:core-ktx:1.0.2'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation Libraries.KOTLIN
+    implementation Libraries.APP_COMPAT
+    implementation Libraries.KTX_CORE
+    implementation Libraries.CONSTRAINT_LAYOUT
     //viewpager
-    implementation 'androidx.viewpager2:viewpager2:1.0.0-beta03'
+    implementation Libraries.VIEW_PAGER_2
     // Navigation
-    implementation "android.arch.navigation:navigation-fragment:$navigation_version"
-    implementation "android.arch.navigation:navigation-ui:$navigation_version"
-    implementation "android.arch.navigation:navigation-fragment-ktx:$navigation_version"
-    implementation "android.arch.navigation:navigation-ui-ktx:$navigation_version"
+    implementation Libraries.NAV_FRAGMENT
+    implementation Libraries.NAV_UI
+    implementation Libraries.NAV_FRAG_KTX
+    implementation Libraries.NAV_UI_KTX
     // Room
-    implementation "androidx.room:room-runtime:$room_version"
-    implementation "androidx.legacy:legacy-support-v4:1.0.0"
-    implementation "androidx.room:room-ktx:$room_version"
-    kapt "androidx.room:room-compiler:$room_version"
+    implementation Libraries.ROOM
+    implementation Libraries.LEGACY_SUPPORT
+    implementation Libraries.ROOM_KTX
+    kapt Libraries.ROOM_COMPILER
 
     // Gson
-    implementation "com.google.code.gson:gson:2.8.5"
+    implementation Libraries.OTHER_GSON
 
     // Kotlin Android Coroutines
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.1'
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.1"
+    implementation Libraries.COROUTINES_CORE
+    implementation Libraries.COROUTINES_ANDROID
 
     // Retrofit
-    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
-    implementation 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2'
+    implementation Libraries.RETROFIT
+    implementation Libraries.GSON
+    implementation Libraries.RETROFIT_COROUTINE_ADAPTER
 
     // ViewModel
-    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation Libraries.LIFECYCLE_EXT
+    implementation Libraries.LIFECYCLE_VIEWMODEL_KTX
     // alternatively - just LiveData
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
-    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
-    implementation "androidx.lifecycle:lifecycle-runtime:$lifecycle_version"
+    implementation Libraries.LIVE_DATA_KTX
+    kapt Libraries.LIFE_CYCLE_COMPILER
+    implementation Libraries.LIFE_CYCLE_RUNTIME
 
     // Kodein
-    implementation "org.kodein.di:kodein-di-generic-jvm:$kodein_version"
-    implementation "org.kodein.di:kodein-di-framework-android-x:$kodein_version"
+    implementation Libraries.KODEIN
+    implementation Libraries.KODIEN_ANDROID_X
 
     // Better dateTime-time support even on older Android versions
-    implementation "com.jakewharton.threetenabp:threetenabp:1.1.0"
+    implementation Libraries.THIRTEEN_BP
 
     // Glide
-    implementation 'com.github.bumptech.glide:glide:4.8.0'
-    kapt 'com.github.bumptech.glide:compiler:4.8.0'
+    implementation Libraries.GLIDE
+    kapt Libraries.GLIDE_COMPILER
 
     // Groupie RecyclerView
-    implementation 'com.xwray:groupie:2.3.0'
-    implementation 'com.xwray:groupie-kotlin-android-extensions:2.3.0'
+    implementation Libraries.GROUPIE
+    implementation Libraries.GROUPIE_ANDROID_EXTENTIONS
+    //google's material design
+    implementation Libraries.MATERIAL_GOOGLE
 
 
-
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    implementation 'com.google.android.material:material:1.0.0'
+    testImplementation Libraries.JUNIT
+    androidTestImplementation Libraries.JUNIT_EXT
+    androidTestImplementation Libraries.ESPRESSO
 }
