@@ -1,2 +1,2 @@
-include ':app', ':authentication'
+include ':app', ':authentication', ':library_base'
 rootProject.name='Polls'
