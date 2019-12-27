@@ -17,6 +17,7 @@ object Versions {
     const val COROUTINES_ADAPTER_VERSION = "0.9.2"
     const val GLIDE_VERSION = "4.8.0"
     const val GROUPIE_VERSION = "2.3.0"
+    const val FRAGMENT_KTX = "1.1.0"
 }
 
 object Libraries {
@@ -80,6 +81,7 @@ object Libraries {
     const val JUNIT_EXT = "androidx.test.ext:junit:1.1.1"
     const val ESPRESSO = "androidx.test.espresso:espresso-core:3.2.0"
     const val MATERIAL_GOOGLE = "com.google.android.material:material:1.0.0"
+    const val FRAGMENT_KTX = "androidx.fragment:fragment-ktx:${Versions.FRAGMENT_KTX}"
 }
 
 object ProjectDependencies {
