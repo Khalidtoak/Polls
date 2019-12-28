@@ -15,15 +15,16 @@ private const val FEATURE_PREFIX = ":feature_"
 * */
 object ModuleDependencies {
     const val APP = ":app"
-    const val FEATURE_AUTH = FEATURE_PREFIX + "auth"
+    const val FEATURE_AUTH = FEATURE_PREFIX + "authentication"
     const val LIBRARY_BASE = ":library_base"
-}
 
-/*
+    /*
 * Returns all modules from the constatnt values in this class and converts to A set*/
-fun getAllModules() = ModuleDependencies::class.memberProperties.filter { it.isConst }
-    .map { it.getter.call().toString() }.toSet()
+    fun getAllModules() = ModuleDependencies::class.memberProperties.filter { it.isConst }
+        .map { it.getter.call().toString() }.toSet()
 
-/*
+    /*
 * Gets all modules starting with the feature prefix*/
-fun getDfms() = getAllModules().filter { it.startsWith(FEATURE_PREFIX) }.toSet()
+    fun getDfms() = getAllModules().filter { it.startsWith(FEATURE_PREFIX) }.toSet()
+    fun getMutableDfms() = getDfms().toMutableSet()
+}
