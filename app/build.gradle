@@ -15,6 +15,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "BASE_URL", "http://polls-api2019.herokuapp.com/")
     }
     buildTypes {
         release {
@@ -44,6 +45,8 @@ dependencies {
     implementation Libraries.APP_COMPAT
     implementation Libraries.KTX_CORE
     implementation Libraries.CONSTRAINT_LAYOUT
+    //play core
+    implementation Libraries.PLAY_CORE
     //viewpager
     implementation Libraries.VIEW_PAGER_2
     // Navigation
@@ -55,6 +58,8 @@ dependencies {
     implementation Libraries.ROOM
     implementation Libraries.LEGACY_SUPPORT
     implementation Libraries.ROOM_KTX
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     kapt Libraries.ROOM_COMPILER
 
     // Gson

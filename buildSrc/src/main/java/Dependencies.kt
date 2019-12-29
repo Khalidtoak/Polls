@@ -18,9 +18,11 @@ object Versions {
     const val GLIDE_VERSION = "4.8.0"
     const val GROUPIE_VERSION = "2.3.0"
     const val FRAGMENT_KTX = "1.1.0"
+    const val PLAY_CORE = "1.6.4"
 }
 
 object Libraries {
+    const val PLAY_CORE = "com.google.android.play:core:${Versions.PLAY_CORE}"
     const val KOTLIN = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.KOTLIN_VERSION}"
     const val NAV_FRAGMENT =
         "android.arch.navigation:navigation-fragment:${Versions.NAVIGATION_VERSION}"
