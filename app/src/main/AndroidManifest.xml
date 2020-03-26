@@ -16,7 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ui.NavHostActivity"/>
+        <activity android:name=".ui.IntroActivity"></activity>
+        <activity android:name=".ui.NavHostActivity" />
     </application>
 
 </manifest>
