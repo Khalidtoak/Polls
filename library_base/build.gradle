@@ -1,0 +1,48 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: "kotlin-kapt"
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    api Libraries.KOTLIN_REFLECT
+    api Libraries.APP_COMPAT
+    api Libraries.KODEIN
+    api Libraries.KODIEN_ANDROID_X
+    api Libraries.COROUTINES_ANDROID
+    api Libraries.KTX_CORE
+    api Libraries.LIFECYCLE_VIEWMODEL_KTX
+    api Libraries.LIFECYCLE_EXT
+    api Libraries.GLIDE
+    kapt Libraries.GLIDE_COMPILER
+    api Libraries.FRAGMENT_KTX
+}

@@ -11,4 +11,7 @@
     <string name="forgot_password">forgot password?</string>
     <string name="username">Username</string>
     <string name="email">Email</string>
+    <string name="title_authentication">Authentication</string>
+    <string name="home">Home</string>
+    <string name="profile">profile</string>
 </resources>

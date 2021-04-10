@@ -4,10 +4,11 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.preference.PreferenceManager
 
-/**
- * Created by  on 8/16/2019.
- */
-abstract class PreferenceProvider(context: Context) {
-    protected val sharedPreferences: SharedPreferences? =
-        PreferenceManager.getDefaultSharedPreferences(context.applicationContext)
+/*
+* @author Khalidtoak
+* @since  2019-12-28
+*/
+abstract class PreferenceProvider(context: Context){
+    protected val sharedPreferences : SharedPreferences?
+            = PreferenceManager.getDefaultSharedPreferences(context.applicationContext)
 }
